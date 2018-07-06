@@ -524,7 +524,7 @@ nav ul {
     height: auto;
     top: 0;
     left: 0;
-    margin: 5% 0;
+    margin: 3% 0;
   }
 
   .modalCard .modalBackgroundTwo {
@@ -568,7 +568,7 @@ nav ul {
     max-width: 100%;
     max-height: auto;
     padding: 10% 5% 5% 5%;
-    margin: 5% 0;
+    margin: 10% 0;
     overflow-y: auto;
     display: flex;
     flex-wrap: wrap;
