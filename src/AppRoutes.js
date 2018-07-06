@@ -57,7 +57,7 @@ class AppRoutes extends Component {
   render() {
     const { name, email, toDate, fromDate, hikeInfo, currentHike } = this.state;
     return (
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Fragment>
           <Route
             exact
