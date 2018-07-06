@@ -1,0 +1,885 @@
+* {
+  font-family: 'Encode Sans Condensed', sans-serif;
+}
+
+/* KEYFRAMES */
+@keyframes appearAnim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ELEMENT STYLES */
+
+body {
+  background: url('https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
+    no-repeat;
+  background-size: cover;
+  padding: 8px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav h3 {
+  margin-left: 2%;
+}
+
+nav ul li {
+  margin: 0 2%;
+}
+
+nav ul {
+  list-style-type: none;
+  margin-right: 2%;
+}
+
+/* CLASSNAME STYLES */
+
+.forMobile {
+  display: none;
+}
+
+.mainText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8%;
+}
+
+.mainText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+  flex-direction: column;
+  color: #111;
+  line-height: 1rem;
+}
+
+.mainText .mainTextLeft {
+  align-self: flex-start;
+  margin-left: 10%;
+}
+
+.mainText .mainTextRight {
+  align-self: flex-end;
+  margin-right: 20%;
+}
+.imageContainer {
+  height: 200px;
+  display: flex;
+  justify-content: space-around;
+  margin: 10% 0 7% 0;
+}
+
+.roundedEffectImage {
+  height: 200px;
+  transition: 0.5s;
+  opacity: 0.8;
+}
+
+.roundedEffectImage:hover {
+  transition: 0.5s;
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.roundedEffectImage img {
+  max-width: 200px;
+  height: 200px;
+  border-radius: 360px;
+  opacity: 0.8;
+  z-index: 0;
+}
+
+.roundedEffectImage img:hover {
+  opacity: 1;
+}
+
+.roundedEffectImage .innerBorderOpac {
+  border: 5px solid rgba(180, 180, 180, 0.5);
+  border-radius: 360px;
+  z-index: 1;
+}
+
+.roundedEffectImage .outerBorderOpac {
+  border: 5px solid rgba(160, 160, 160, 0.5);
+  border-radius: 500px;
+  padding: none;
+  z-index: 2;
+}
+
+.rei1 {
+  animation: roundedEffectImageAppearAnim 0.5s
+    cubic-bezier(0.02, 0.96, 0.65, -0.9);
+}
+
+.rei2 {
+  animation: roundedEffectImageAppearAnim 1s
+    cubic-bezier(0.02, 0.96, 0.65, -0.9);
+}
+
+.rei3 {
+  animation: roundedEffectImageAppearAnim 1.5s
+    cubic-bezier(0.02, 0.96, 0.65, -0.9);
+}
+
+.rei4 {
+  animation: roundedEffectImageAppearAnim 2s
+    cubic-bezier(0.02, 0.96, 0.65, -0.9);
+}
+
+/* MODAL STYLES */
+
+.modalWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalCard {
+  position: relative;
+  background: white;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  overflow-y: none;
+  max-width: 1000px;
+  max-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  margin-bottom: 100px;
+  animation: appearAnim 1s;
+}
+
+.modalCard .modalBackgroundTwo {
+  width: 1000px;
+  height: 600px;
+  border-radius: 30px;
+  background-size: 'cover';
+}
+
+.modalCard .hikeInfo {
+  position: absolute;
+  bottom: -50px;
+  right: 0;
+  margin: 50px 50px 0 50px;
+  color: #fff;
+  font-size: 2rem;
+  line-height: 2rem;
+  border-radius: 30px;
+  padding-top: 10%;
+}
+
+.modalCard .hikeInfo .fa-walking {
+  margin-right: calc(50px - 20px);
+}
+
+.modalCard .hikeInfo .fa-cloud {
+  margin-right: calc(50px - 40px);
+}
+
+.modalCard .hikeInfo .fa-thermometer-empty {
+  margin-right: calc(50px - 16px);
+}
+
+.modalCard .hikeInfo .fa-map-marked {
+  margin-right: calc(50px - 36px);
+}
+
+.modalCard .viewHikeInfoBtn {
+  position: absolute;
+  bottom: -50px;
+  left: calc(450px - 32.875px);
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: #fff;
+  border-radius: 100px;
+  background: rgba(32, 1, 173, 0.8);
+  border: 2px solid rgb(32, 1, 173);
+  padding: 15px;
+  cursor: pointer;
+}
+
+.modalCard .viewHikeInfoBtn .fa-map-marked-alt {
+  margin-right: 10px;
+}
+.closeButton {
+  position: absolute;
+  top: 100px;
+  right: 100px;
+}
+
+.modalBackground {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: black;
+  opacity: 0.5;
+}
+
+/* NESTED MODAL STYLES */
+
+.nestedModalCard {
+  width: 1000px;
+  height: 600px;
+  border-radius: 30px;
+  background: #fff;
+  margin-bottom: 100px;
+  position: relative;
+  z-index: 15;
+}
+
+.nestedModalCard img {
+  max-width: 100%;
+  max-height: auto;
+}
+
+.nestedHikeInfo {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.infoBlock {
+  margin: 5% 5% 0 5%;
+  max-height: 400px;
+  max-width: 400px;
+  font-size: 1.5rem;
+}
+
+.infoBlock p {
+  display: inline;
+}
+
+.nestedModalCard .infoBlock .fa-walking {
+  margin-right: calc(50px - 20px);
+}
+
+.nestedModalCard .infoBlock .fa-cloud {
+  margin-right: calc(50px - 40px);
+}
+
+.nestedModalCard .infoBlock .fa-thermometer-empty {
+  margin-right: calc(50px - 16px);
+}
+
+.nestedModalCard .infoBlock .fa-map-marked {
+  margin-right: calc(50px - 36px);
+}
+
+.nestedModalCard .infoBlock .hikeBtn {
+  border-radius: 100px;
+  padding: 10px;
+  color: #fff;
+  border-radius: 100px;
+  background: rgba(32, 1, 173, 0.8);
+  border: 2px solid rgb(32, 1, 173);
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.posAbsCustom1 {
+  position: absolute;
+  bottom: 30px;
+  right: 0;
+  margin: 50px 100px 50px 50px;
+}
+
+.nestedModalCard .closeButton {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+}
+
+.nestedModalCard .closeButton button {
+  border: none;
+  font-size: 2rem;
+  background: transparent;
+  cursor: pointer;
+  color: #222;
+}
+
+.nestedModalCard .centerContent {
+  padding: 50px 0 30px 80px;
+  align-self: center;
+}
+
+/* BOOKHIKEFORM STYLES */
+
+.bookHikeForm {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.bookHikeFormContainer {
+  height: 757px;
+  width: 50%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.bookHikeForm button,
+.bookHikeFormContainer button {
+  /* border-radius: 100px; */
+  padding: 10px;
+  color: #fff;
+  background: rgba(118, 151, 51, 0.8);
+  border: 2px solid rgb(118, 151, 51);
+  width: 320px;
+  margin-top: 8%;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.bookHikeForm .bookHikeFormContainer .fa-map-marked-alt {
+  margin-right: 5%;
+}
+
+.bookHikeFormContainer .goBackContainer button .fa-arrow-circle-left {
+  margin-right: 3%;
+}
+
+.bookHikeFormContainer {
+  position: relative;
+  flex: 1;
+}
+
+.bookHikeFormContainer input {
+  width: 300px;
+  padding: 10px;
+  margin-top: 3%;
+}
+
+.bookHikeFormContainer label {
+  font-weight: bold;
+}
+
+.bookHikeFormContainer .formInputBlock {
+  margin-top: 3%;
+}
+
+.bookHikeForm .goBackContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1%;
+}
+
+.bookHikeForm .bookHikeFormHikeInfoContainer {
+  margin: 1% 0 0 3%;
+  flex: 1;
+  padding: 3%;
+  display: flex;
+  flex-direction: column;
+  color: rgb(118, 180, 51);
+  font-size: 2.4rem;
+}
+
+.bookHikeFormHikeInfoContainer table {
+  margin-top: 4%;
+}
+
+.bookHikeFormHikeInfoContainer table tr td {
+  height: 100px;
+}
+
+.bookHikeForm .bookHikeFormHikeInfoContainer img {
+  margin-left: 30px;
+  width: 600px;
+  max-height: 600px;
+}
+
+.bookHikeForm .bookHikeFormHikeInfoContainer .fa-walking {
+  margin: 0 calc(50px - 20px);
+}
+
+.bookHikeForm .bookHikeFormHikeInfoContainer .fa-cloud {
+  margin: 0 calc(50px - 40px);
+}
+
+.bookHikeForm .bookHikeFormHikeInfoContainer .fa-thermometer-empty {
+  margin: 0 calc(50px - 16px);
+}
+
+.bookHikeForm .bookHikeFormHikeInfoContainer .fa-map-marked {
+  margin: 0 calc(50px - 36px);
+}
+
+.nestedModalCard .successAnimContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.nestedModalCard .successAnimContainer .successAnimCircle {
+  width: 200px;
+  height: 200px;
+  border: 5px solid rgb(118, 151, 51);
+  border-radius: 140px;
+  position: relative;
+  margin-bottom: 15%;
+  animation: 0.6s bookedAnim cubic-bezier(0.02, 0.96, 0.65, -0.9);
+}
+
+.nestedModalCard .successAnimContainer .successAnimCircle .fa-check {
+  position: absolute;
+  top: 30%;
+  left: 32%;
+  color: rgb(118, 151, 51);
+  font-size: 5rem;
+  animation: 0.9s bookedAnim2 cubic-bezier(0.02, 0.96, 0.65, -0.9);
+}
+
+.nestedModalCard .bookedInfoContainer button {
+  /* border-radius: 100px; */
+
+  padding: 10px;
+  color: #fff;
+  background: rgba(118, 151, 51, 0.8);
+  border: 2px solid rgb(118, 151, 51);
+  width: 320px;
+  margin-top: 3%;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.nestedModalCard .bookedInfoContainer .fa-arrow-circle-left {
+  margin-right: 2%;
+}
+
+.nestedModalCard .bookedInfoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nestedModalCard .bookedContainer {
+  padding: 1% 3%;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  body {
+    height: 100%;
+    padding: 10% 10% 10% 1%;
+  }
+
+  .imageContainer {
+    margin-top: 45%;
+    margin-bottom: 20%;
+
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .imageContainer .roundedEffectImage {
+    height: auto;
+    width: 120px;
+    margin: 10% 5% 2% 0;
+  }
+
+  .imageContainer .roundedEffectImage img {
+    width: 100%;
+    height: 100px;
+  }
+  .roundedEffectImage .innerBorderOpac {
+    border: 5px solid rgba(180, 180, 180, 0.5);
+    border-radius: 360px;
+    z-index: 1;
+  }
+
+  .roundedEffectImage .outerBorderOpac {
+    height: auto;
+    width: 100%;
+    margin: 0 10% 0 8%;
+  }
+
+  .modalCard {
+    max-width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+  }
+
+  .modalCard .modalBackgroundTwo {
+    max-width: 300px;
+    max-height: 500px;
+    position: relative;
+  }
+
+  .modalCard .hikeInfo {
+    position: absolute;
+    bottom: 10px;
+    left: -50px;
+  }
+
+  .modalCard .viewHikeInfoBtn {
+    position: absolute;
+    bottom: -130px;
+    left: 24%;
+  }
+
+  .modalCard .forMobile {
+    display: block;
+  }
+
+  .modalCard .forMobile button {
+    position: absolute;
+    top: -10%;
+    right: 0;
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: #fff;
+    border-radius: 100px;
+    background: rgba(32, 1, 173, 0.8);
+    border: 2px solid rgb(32, 1, 173);
+    padding: 15px;
+    cursor: pointer;
+    width: 163px;
+  }
+
+  .nestedModalCard {
+    max-width: 100%;
+    max-height: auto;
+    padding: 10% 5% 5% 5%;
+    top: 0;
+    left: 0;
+    margin: 10% 0;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .nestedModalCard .posAbsCustom1 {
+    display: none;
+  }
+
+  .nestedModalCard .forMobile {
+    display: flex;
+
+    max-width: 500px;
+    max-height: 200px;
+    justify-content: space-around;
+  }
+  .nestedModalCard .forMobile .hikeBtn {
+    border-radius: 100px;
+    padding: 20px;
+    color: #fff;
+    border-radius: 100px;
+    background: rgba(32, 1, 173, 0.8);
+    border: 2px solid rgb(32, 1, 173);
+    font-size: 1.4rem;
+    cursor: pointer;
+    margin: 10% 10% 10% 0%;
+    width: 100%;
+  }
+
+  .bookHikeForm {
+    flex-wrap: wrap;
+    position: relative;
+    top: 0;
+    left: 3%;
+    margin: auto;
+    max-width: 100%;
+  }
+
+  .bookHikeForm .bookHikeFormContainer {
+    flex: 1;
+    max-height: auto;
+  }
+
+  .bookHikeForm .bookHikeFormHikeInfoContainer {
+    max-height: auto;
+    flex: 1;
+  }
+
+  .bookHikeForm .bookHikeFormHikeInfoContainer img {
+    max-width: 230px;
+    max-height: auto;
+    margin: auto auto auto 4%;
+  }
+
+  .bookHikeForm .bookHikeFormContainer {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bookHikeFormContainer .formInputBlock {
+    max-width: 200px;
+    padding: 0 15% 15% 15%;
+  }
+
+  .bookHikeForm .bookHikeFormContainer input {
+    max-width: 100%;
+    margin-top: 0;
+  }
+
+  .bookHikeForm .bookHikeFormContainer .goBackContainer {
+    max-width: 100%;
+    justify-content: center;
+  }
+
+  .bookHikeForm .bookHikeFormContainer .goBackContainer button {
+    max-width: 80%;
+    margin: 10%;
+  }
+
+  .bookHikeForm .bookHikeFormContainer button {
+    max-width: 80%;
+    margin: 0 10%;
+  }
+
+  .nestedHikeInfo .bookedContainer {
+    position: absolute;
+    bottom: 0;
+    left: center;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  body {
+    height: 100%;
+    padding: 10% 10% 10% 1%;
+  }
+
+  .imageContainer {
+    margin-top: 20%;
+    margin-bottom: 20%;
+
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .imageContainer .roundedEffectImage {
+    height: auto;
+    width: 120px;
+    margin: 10% 5% 2% 0;
+  }
+
+  .imageContainer .roundedEffectImage img {
+    width: 100%;
+    height: 100px;
+  }
+  .roundedEffectImage .innerBorderOpac {
+    border: 5px solid rgba(180, 180, 180, 0.5);
+    border-radius: 360px;
+    z-index: 1;
+  }
+
+  .roundedEffectImage .outerBorderOpac {
+    height: auto;
+    width: 100%;
+    margin: 0 10% 0 8%;
+  }
+
+  .modalCard {
+    max-width: 100%;
+    height: auto;
+    top: 5%;
+    left: 0;
+  }
+
+  .modalCard .modalBackgroundTwo {
+    max-width: 700px;
+    max-height: 1000px;
+    position: relative;
+  }
+
+  .modalCard .hikeInfo {
+    position: absolute;
+    bottom: 20px;
+    left: -70px;
+  }
+
+  .modalCard .viewHikeInfoBtn {
+    position: absolute;
+    bottom: -20%;
+    left: 40%;
+  }
+
+  .modalCard .forMobile {
+    display: block;
+  }
+
+  .modalCard .forMobile button {
+    position: absolute;
+    top: -20%;
+    right: 3%;
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: #fff;
+    border-radius: 100px;
+    background: rgba(32, 1, 173, 0.8);
+    border: 2px solid rgb(32, 1, 173);
+    padding: 15px;
+    cursor: pointer;
+    width: 163px;
+  }
+
+  .nestedModalCard {
+    max-width: 100%;
+    max-height: auto;
+    padding: 10% 5% 5% 5%;
+    top: 0;
+    left: 0;
+    margin: 10% 0;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .nestedModalCard .posAbsCustom1 {
+    display: none;
+  }
+
+  .nestedModalCard .forMobile {
+    display: flex;
+
+    max-width: 500px;
+    max-height: 200px;
+    justify-content: space-around;
+  }
+  .nestedModalCard .forMobile .hikeBtn {
+    border-radius: 100px;
+    padding: 20px;
+    color: #fff;
+    border-radius: 100px;
+    background: rgba(32, 1, 173, 0.8);
+    border: 2px solid rgb(32, 1, 173);
+    font-size: 1.4rem;
+    cursor: pointer;
+    margin: 10% 10% 10% 0%;
+    width: 100%;
+  }
+
+  .nestedModalCard {
+    max-width: 82%;
+    max-height: auto;
+    padding: 5% 5% 5% 5%;
+    top: 0;
+    left: 0;
+    margin: 10% 0;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nestedModalCard .posAbsCustom1 {
+    display: none;
+  }
+
+  .nestedModalCard .infoBlock {
+    margin: 10% 0% 5% 20%;
+  }
+
+  .nestedModalCard .forMobile {
+    display: flex;
+
+    max-width: 620px;
+    max-height: 200px;
+    justify-content: center;
+  }
+  .nestedModalCard .forMobile .hikeBtn {
+    border-radius: 100px;
+    padding: 20px;
+    color: #fff;
+    border-radius: 100px;
+    background: rgba(32, 1, 173, 0.8);
+    border: 2px solid rgb(32, 1, 173);
+    font-size: 1.4rem;
+    cursor: pointer;
+    margin: 10% 10% 10% 6.7%;
+    width: 100%;
+  }
+  .bookHikeForm {
+    position: relative;
+    top: -60px;
+    left: 0;
+    min-width: 750px;
+    max-height: 100%;
+    margin-bottom: 0;
+  }
+
+  .bookHikeForm .bookHikeFormHikeInfoContainer img {
+    margin: 10% 10% 10% 0;
+    max-width: 300px;
+  }
+}
+
+/* KEYFRAMES */
+
+@keyframes roundedEffectImageAppearAnim {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+}
+
+@keyframes bookedAnim {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bookedAnim2 {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
