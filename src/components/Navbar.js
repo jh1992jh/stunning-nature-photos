@@ -5,13 +5,8 @@ const Navbar = () => {
   return (
     <nav>
       <Link to="/">
-        <h3>Brand</h3>
+        <h3>Stunning nature photos</h3>
       </Link>
-      <ul>
-        <li>Link</li>
-        <li>Link</li>
-        <li>Link</li>
-      </ul>
     </nav>
   );
 };
